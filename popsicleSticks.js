@@ -3,30 +3,33 @@ var PopsicleSticks = function(studentsArray){
   this.toPickFrom = [];
 };
 
-PopsicleSticks.prototype.shuffleNames = function(){
+var shuffleNames = function(){
   //shuffle array of names, 
-  for (var i = 0; i < this.students.length; i++) {
-    var index = Math.floor(Math.random()*(this.students.length-i)+i);
-    var temp = this.students[i];
-    this.students[i] = this.students[index];
-    this.students[index] = temp;
+  var sticks = JSON.parse(localStorage.sticks);
+  for (var i = 0; i < sticks.students.length; i++) {
+    var index = Math.floor(Math.random()*(sticks.students.length-i)+i);
+    var temp = sticks.students[i];
+    sticks.students[i] = sticks.students[index];
+    sticks.students[index] = temp;
   };
-  return this.students.slice(0);
+  return sticks.students.slice(0);
 };
-
-PopsicleSticks.prototype.pickName = function(){
+var pickName = function(){
   //if toPickFrom is empty, create it from shuffleNames
-  if(!this.toPickFrom.length){
-    this.toPickFrom = this.shuffleNames();
+  var sticks = JSON.parse(localStorage.sticks)
+  if(!sticks.toPickFrom.length){
+    sticks.toPickFrom = shuffleNames();
   }
-  return this.toPickFrom.pop()
+  var chosen =  sticks.toPickFrom.pop();
+  localStorage.sticks = JSON.stringify(sticks);
+  console.log(JSON.parse(localStorage.sticks).toPickFrom);
+  return chosen;
   //pop off and return the last name from toPickFrom
 };
-
-var sticks = new PopsicleSticks(students);
-console.log(sticks.pickName());
+localStorage.sticks = JSON.stringify(new PopsicleSticks(students));
 var form = document.getElementById("form-id");
 
 document.getElementById("pick").addEventListener("click", function () {
-  document.getElementById("picked").textContent=sticks.pickName();
+  var sticks = JSON.parse(localStorage.sticks)
+  document.getElementById("picked").textContent= pickName();
 });
