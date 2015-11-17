@@ -26,7 +26,9 @@ var pickName = function(){
   return chosen;
   //pop off and return the last name from toPickFrom
 };
-localStorage.sticks = JSON.stringify(new PopsicleSticks(students));
+if (!localStorage.sticks){
+  localStorage.sticks = JSON.stringify(new PopsicleSticks(students));
+}
 var form = document.getElementById("form-id");
 
 document.getElementById("pick").addEventListener("click", function () {
