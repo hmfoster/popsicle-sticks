@@ -1,0 +1,45 @@
+CLASS
+HRR11
+Christopher Clark
+David Meidlinger
+Delphine Foo-Matkin
+Gabriel Meyr
+George Nabil Abou-Zolof
+Irene   Koan
+Jason   Jensen
+Jefri   Vanegas
+Jerome  Hudak
+John    Rauschenberg
+Jonathan    Lee
+Kathlyn Ngo
+Kayla   Dowling
+Kristen Haydel
+Madeline    Bernard
+Matt    Hand
+Oleg    Umarov
+Ray Millet
+Robert  Lin
+Rokas   Zickevicius
+Ryan    Jagger
+Santosh Gautam
+Sean    Reimer
+Song    Gao
+Tiffany Huang
+Travis  Miller
+Venkatesh   Dev Namburi
+Vincent Jo
+Zac Delventhal
+Zan Rosenthal
+
+CLASS
+HRR10
+Hailey Foster
+Luna Cat
+Otto Cat
+Carlos Ramon
+
+CLASS HRR9
+Bill
+Erin
+Caitlin
+Caylee

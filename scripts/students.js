@@ -1,7 +1,6 @@
 var fs = require('fs');
 
-var rosters = fs.readFileSync('../student.txt').toString().split('CLASS');
-console.log(rosters);
+var rosters = fs.readFileSync('../students.txt').toString().split('CLASS');
 var classRosters = {};
 var name, students;
 rosters.forEach(function(group){
