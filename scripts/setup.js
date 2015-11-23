@@ -1,4 +1,4 @@
-//delete localStorage.sticks;
+delete localStorage.sticks;
 
 //Set up local storage
 if (!localStorage.sticks){

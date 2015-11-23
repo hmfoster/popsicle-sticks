@@ -1,4 +1,4 @@
-delete localStorage.sticks;
+
 var PopsicleSticks = function(groups){
   for (var group in groups){
     this[group] = groups[group];
@@ -29,15 +29,3 @@ var pickName = function(group){
   return chosen;
   //pop off and return the last name from toPickFrom
 };
-
-//Set up local storage
-if (!localStorage.sticks){
-  localStorage.sticks = JSON.stringify(new PopsicleSticks(classRosters));
-}
-console.log(JSON.parse(localStorage.sticks));
-var form = document.getElementById("form-id");
-
-document.getElementById("pick").addEventListener("click", function () {
-  var sticks = JSON.parse(localStorage.sticks);
-  document.getElementById("picked").textContent= pickName('HRR11');
-});
