@@ -24,10 +24,13 @@ var pickClass = function(){
   return selClass.value;
 }
 document.getElementById("pick").addEventListener("click", function () {
-  var sticks = JSON.parse(localStorage.sticks);
   document.getElementById("picked").textContent= pickName(pickClass());
 
 });
+
+document.getElementById("skip").addEventListener("click", function(){
+  document.getElementById("picked").textContent= skip(pickClass());
+})
 
 document.getElementById("clear-memory").addEventListener("click", function(){
   document.getElementById("picked").textContent=""

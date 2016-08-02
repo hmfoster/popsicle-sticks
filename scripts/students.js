@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var rosters = fs.readFileSync('../students.txt').toString().split('CLASS');
+var rosters = fs.readFileSync('students.txt').toString().split('CLASS');
 var classRosters = {};
 var name, students;
 rosters.forEach(function(group){
@@ -12,7 +12,7 @@ rosters.forEach(function(group){
     classRosters[name].students = students;
   }
 });
-fs.writeFile('list.js', "var classRosters =" + JSON.stringify(classRosters), function(err){
+fs.writeFile('scripts/list.js', "var classRosters =" + JSON.stringify(classRosters), function(err){
   if (err) throw err;
   console.log('success!');
 });

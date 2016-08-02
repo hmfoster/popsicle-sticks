@@ -7,7 +7,7 @@ var PopsicleSticks = function(groups){
 };
 
 var shuffleNames = function(group){
-  //shuffle array of names, 
+  //shuffle array of names,
   var sticks = JSON.parse(localStorage.sticks)[group];
   for (var i = 0; i < sticks.students.length; i++) {
     var index = Math.floor(Math.random()*(sticks.students.length-i)+i);
@@ -23,9 +23,17 @@ var pickName = function(group){
   if(!sticks[group].toPickFrom.length){
     sticks[group].toPickFrom = shuffleNames(group);
   }
+  //pop off and return the last name from toPickFrom
   var chosen =  sticks[group].toPickFrom.pop();
+  sticks[group].chosen = chosen;
   localStorage.sticks = JSON.stringify(sticks);
   console.log(JSON.parse(localStorage.sticks)[group].toPickFrom);
   return chosen;
-  //pop off and return the last name from toPickFrom
 };
+
+var skip = function(group){
+  var sticks = JSON.parse(localStorage.sticks);
+  sticks[group].toPickFrom.unshift(sticks[group].chosen);
+  localStorage.sticks = JSON.stringify(sticks);
+  return pickName(group);
+}
